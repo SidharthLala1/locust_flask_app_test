@@ -1,7 +1,7 @@
 # Flask API Load Testing Project
 
 This project contains a comprehensive suite of load and stress testing scripts for a Flask API using Locust. The testing suite focuses on two main endpoints: user registration and login functionality.
-In reports there are two reports already generated using locust for both the end points.
+In reports folder there are two reports already generated using locust for both the end points.
 
 ## Table of Contents
 - [Project Structure](#project-structure)
