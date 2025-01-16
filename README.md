@@ -1,6 +1,7 @@
 # Flask API Load Testing Project
 
 This project contains a comprehensive suite of load and stress testing scripts for a Flask API using Locust. The testing suite focuses on two main endpoints: user registration and login functionality.
+In reports there are two reports already generated using locust for both the end points.
 
 ## Table of Contents
 - [Project Structure](#project-structure)
@@ -27,6 +28,7 @@ locust_tests/
 ```
 
 ## Prerequisites
+## Note the flask app should be running to generate successful report.
 - Python 3.8 or higher
 - pip (Python package installer)
 - Flask API running locally or on a test server
@@ -37,7 +39,7 @@ locust_tests/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd locust_tests
+cd locust_flask_app_test
 ```
 
 2. Create and activate a virtual environment (recommended):
@@ -163,47 +165,3 @@ locust -f locust_scenarios/registration_test.py --csv=reports/registration_test
 ```bash
 locust -f locust_scenarios/registration_test.py --html=reports/registration_test.html
 ```
-
-## Troubleshooting
-
-Common issues and solutions:
-
-1. **Connection Refused**
-   - Verify the Flask API is running
-   - Check the HOST configuration in test_config.py
-   - Ensure no firewall blocking
-
-2. **Memory Issues**
-   - Reduce the number of users
-   - Increase system resources
-   - Check for memory leaks
-
-3. **High Failure Rate**
-   - Check API endpoint availability
-   - Verify test data validity
-   - Review error logs
-
-## Best Practices
-
-1. **Test Data Management**
-   - Use realistic test data
-   - Avoid test data conflicts
-   - Clean up test data after testing
-
-2. **Resource Monitoring**
-   - Monitor CPU usage
-   - Track memory consumption
-   - Watch network utilization
-   - Log application metrics
-
-3. **Test Execution**
-   - Start with small user numbers
-   - Gradually increase load
-   - Monitor system behavior
-   - Document findings
-
-4. **Results Analysis**
-   - Review response times
-   - Analyze error rates
-   - Check resource utilization
-   - Document bottlenecks
