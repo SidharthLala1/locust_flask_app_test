@@ -1,5 +1,5 @@
 from locust import HttpUser, task, between
-from steps.common_steps import register_user, login_user
+from features.steps.common_steps import register_user, login_user
 from faker import Faker
 import random
 

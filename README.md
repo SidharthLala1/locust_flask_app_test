@@ -5,6 +5,24 @@ In the reports folder, there are two reports already generated using locust for 
 
 Also in order to run the BDD tests. Just type behave and it will run both the step files.
 
+# To Run BDD tests. Please follow the below steps.
+## To do: To add reporting and fix breaking tests. 
+## Mostly the assertion erros are due to improper responses from serverr.
+# Run all tests
+behave client_registration.feature
+behave client_login.feature
+# Run only performance tests
+behave client_registration.feature --tags=@performance
+behave client_login.feature --tags=@performance
+# Run concurrent tests
+behave client_registration.feature --tags=@concurrent
+behave client_login.feature --tags=@concurrent
+# Run security tests
+behave client_registration.feature --tags=@security
+behave client_login.feature --tags=@security
+# Run regression tests
+behave client_registration.feature --tags=@regression
+behave client_login.feature --tags=@regression
 ## Table of Contents
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)

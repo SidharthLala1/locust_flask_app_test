@@ -1,0 +1,30 @@
+stages:
+  - test
+  - report
+
+load_test:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install -r requirements.txt
+    - python run_tests.py
+  artifacts:
+    paths:
+      - reports/
+    reports:
+      junit: reports/allure-results/*.xml
+  only:
+    - main
+    - develop
+
+generate_report:
+  stage: report
+  image: frankescobar/allure-docker-service
+  script:
+    - allure generate reports/allure-results -o reports/allure-report --clean
+  artifacts:
+    paths:
+      - reports/allure-report
+  only:
+    - main
+    - develop
